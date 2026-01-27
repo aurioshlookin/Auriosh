@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auriosh | Portfólio Shinobi de Elite</title>
+    <!-- Adição do Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -29,7 +32,7 @@
         }
 
         .card-project {
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: rgba(30, 41, 59, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.03);
             display: flex;
@@ -38,9 +41,9 @@
         }
 
         .card-project:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-8px);
             border-color: var(--mist-accent);
-            box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.25);
+            box-shadow: 0 20px 40px -12px rgba(6, 182, 212, 0.2);
             background: rgba(30, 41, 59, 0.8);
         }
 
@@ -72,7 +75,6 @@
             box-shadow: 0 0 20px rgba(12, 74, 110, 0.4);
         }
 
-        /* Animação para a ping de status */
         .status-ping {
             position: relative;
             display: flex;
@@ -83,10 +85,6 @@
         @keyframes shuriken-spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-
-        .spin-hover:hover i {
-            animation: shuriken-spin 2s linear infinite;
         }
     </style>
 </head>
@@ -112,7 +110,7 @@
                     <i class="fab fa-discord"></i> Hoshigaki Discord
                 </a>
             </nav>
-            <div class="lg:hidden text-cyan-400">
+            <div class="lg:hidden text-cyan-400 cursor-pointer">
                 <i class="fas fa-bars text-xl"></i>
             </div>
         </div>
@@ -172,7 +170,7 @@
                     <div class="absolute -inset-4 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-40 group-hover:opacity-100 transition duration-500"></div>
-                        <img src="icon.png" alt="Auriosh Avatar" onerror="this.src='https://via.placeholder.com/400x400/0f172a/06b6d4?text=Auriosh'" class="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full border-8 border-slate-900 shadow-[0_0_50px_rgba(6,182,212,0.3)]">
+                        <img src="icon.png" alt="Auriosh Avatar" onerror="this.src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=300&h=300&auto=format&fit=crop'" class="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full border-8 border-slate-900 shadow-[0_0_50px_rgba(6,182,212,0.3)]">
                     </div>
                     <div class="absolute -bottom-2 -right-2 bg-slate-900 p-4 rounded-2xl border border-slate-700 shadow-xl flex items-center gap-3">
                         <div class="status-ping">
@@ -310,7 +308,7 @@
 
         <!-- Seção de Projetos / Arsenal -->
         <section id="projetos" class="scroll-mt-28 mb-20">
-            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-8 gap-6">
                 <div>
                     <h2 class="text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none mb-3">Arsenal Shinobi</h2>
                     <p class="text-slate-500 text-lg italic">Forjando sistemas na névoa para a prosperidade do servidor Hawk.</p>
@@ -322,7 +320,26 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Banner de Status de Desenvolvimento -->
+            <div class="mb-12 p-6 bg-cyan-950/20 border border-cyan-500/20 rounded-3xl flex flex-col md:flex-row items-center gap-6 shadow-2xl">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 animate-pulse">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-black text-cyan-400 uppercase tracking-widest italic">Status: Desenvolvimento Ativo</p>
+                        <p class="text-slate-400 text-sm">Todos os projetos estão sendo forjados e refinados diariamente.</p>
+                    </div>
+                </div>
+                <div class="h-10 w-px bg-slate-800 hidden md:block"></div>
+                <div class="flex-grow">
+                    <p class="text-slate-300 text-xs leading-relaxed italic">
+                        "Meu objetivo final é unificar estas ferramentas em um ecossistema único para a Névoa. Em breve: <span class="text-cyan-400 font-bold">Guia de Maestrias</span> e <span class="text-cyan-400 font-bold">Montador de Builds</span>."
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- 1. Nin Ranking -->
                 <div class="card-project rounded-[2.5rem] p-10 group overflow-hidden relative">
@@ -359,7 +376,7 @@
                     </div>
                     <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase underline decoration-cyan-500/40 decoration-4 underline-offset-8">Gestão Névoa</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">
-                        Solução administrativa corporativa para vilas de elite. Arquitetura modular contendo Dashboard estratégico, monitoramento em tempo real com Firebase Auth, abas de organização interna e sumário de atividades automatizados para Mizukage e seus líderes.
+                        Solução administrativa corporativa para vilas de elite. Arquitetura modular contendo Dashboard estratégico, monitoramento em tempo real com Firebase Auth, abas de organização interna e sumário de atividades automatizados para o Mizukami e seus líderes.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-10 font-mono-custom">
                         <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Firebase Full</span>
@@ -375,15 +392,15 @@
                         <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 border border-emerald-500/20">
                             <i class="fas fa-calculator text-3xl"></i>
                         </div>
-                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest">Finance Tool</span>
+                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest">Build Simulator</span>
                     </div>
-                    <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">Calculadora Guilda</h3>
+                    <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">Calculadora Shinobi</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">
-                        Utilitário financeiro de alta precisão projetado para equilibrar a economia de clãs. O sistema gerencia o cálculo de contribuições individuais, taxas de manutenção de guilda e bônus acumulados, garantindo transparência na tesouraria.
+                        Ferramenta essencial de progressão. Permite prever com exatidão a experiência necessária para o próximo nível e simular a distribuição estratégica de perks e pontos de atributos, otimizando o desempenho final da sua build antes de investir os recursos.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-10 font-mono-custom">
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Finance Logic</span>
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Utility UI</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">XP Prediction</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Perk Simulation</span>
                     </div>
                     <a href="https://aurioshlookin.github.io/CalculadoraGuildaNin/" target="_blank" class="w-full py-4 bg-slate-800 hover:bg-emerald-600 rounded-2xl font-black transition-all border border-slate-700 hover:border-emerald-400 text-xs text-center uppercase tracking-[0.3em] shadow-xl">Abrir Calculadora</a>
                 </div>
@@ -394,26 +411,27 @@
                         <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-400 border border-amber-500/20">
                             <i class="fas fa-hand-holding-dollar text-3xl"></i>
                         </div>
-                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest italic">Economy</span>
+                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest italic">Trade Index</span>
                     </div>
                     <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">MercadoNin</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">
-                        Hub comercial inteligente para facilitar o comércio shinobi. Centraliza anúncios de trocas e vendas, permitindo a consulta ágil de preços médios e facilitando a circulação de itens raros e suprimentos no servidor Hawk.
+                        Tabela de preços intercontinental comparando os servidores NA e BR. Exibe o valor base de mercado e os preços sugeridos para os bancos das vilas, estabelecendo diretrizes claras para operações de compra e venda dentro da economia da Névoa.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-10 font-mono-custom">
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Market Engine</span>
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Trade Hub</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">NA/BR Comparison</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Bank Standards</span>
                     </div>
                     <a href="https://aurioshlookin.github.io/MercadoNin/" target="_blank" class="w-full py-4 bg-slate-800 hover:bg-amber-600 rounded-2xl font-black transition-all border border-slate-700 hover:border-amber-400 text-xs text-center uppercase tracking-[0.3em] shadow-xl">Negociar Itens</a>
                 </div>
 
                 <!-- 5. História da Névoa -->
                 <div class="card-project rounded-[2.5rem] p-10 group transition-all duration-500">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl"></div>
                     <div class="flex justify-between items-start mb-10">
                         <div class="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 border border-indigo-500/20">
                             <i class="fas fa-scroll-old text-3xl"></i>
                         </div>
-                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase tracking-widest italic">Lore Preservation</span>
+                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase tracking-widest italic">Lore</span>
                     </div>
                     <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">História Névoa</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">
@@ -430,27 +448,19 @@
                 <div class="card-project rounded-[2.5rem] p-10 group transition-all duration-500">
                     <div class="flex justify-between items-start mb-10">
                         <div class="w-16 h-16 bg-teal-500/10 rounded-2xl flex items-center justify-center text-teal-400 border border-teal-500/20">
-                            <i class="fas fa-map-marked-alt text-3xl"></i>
+                            <i class="fas fa-video text-3xl"></i>
                         </div>
-                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20 uppercase tracking-widest italic">Knowledge Base</span>
+                        <span class="text-[9px] font-black py-1.5 px-3 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20 uppercase tracking-widest italic">Mission Hub</span>
                     </div>
-                    <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">Guia Névoa</h3>
+                    <h3 class="text-2xl font-black mb-5 text-white italic tracking-tight uppercase">Guia de Missões</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">
-                        O hub definitivo de conhecimento técnico para shinobis. Oferece repositório de builds otimizadas, mapeamento estratégico de recursos do servidor e tutoriais de mecânicas essenciais para o progresso de novos ninjas.
+                        O diretório definitivo para shinobis da Névoa. Listagem completa de todas as missões disponíveis na vila com detalhes técnicos, requisitos de level e guias em vídeo exclusivos demonstrando o passo a passo para cada conclusão.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-10 font-mono-custom">
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Wiki Engine</span>
-                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Tutorial System</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Video Tutorials</span>
+                        <span class="text-[9px] bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">Quest Wiki</span>
                     </div>
-                    <a href="https://aurioshlookin.github.io/guianevoa/" target="_blank" class="w-full py-4 bg-slate-800 hover:bg-teal-600 rounded-2xl font-black transition-all border border-slate-700 hover:border-teal-400 text-xs text-center uppercase tracking-[0.2em] shadow-xl">Abrir Wiki</a>
-                </div>
-
-                <!-- Slot de Futuro Projeto -->
-                <div class="card-project border-dashed border-2 border-slate-800 bg-transparent rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center group cursor-pointer spin-hover">
-                    <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-5 group-hover:bg-cyan-900/30 transition-all border border-slate-800 group-hover:border-cyan-500/50">
-                        <i class="fas fa-plus text-slate-600 group-hover:text-cyan-400 text-xl"></i>
-                    </div>
-                    <p class="text-slate-600 group-hover:text-slate-300 font-black text-xs uppercase tracking-[0.3em]">Aguardando novo pergaminho...</p>
+                    <a href="https://aurioshlookin.github.io/guianevoa/" target="_blank" class="w-full py-4 bg-slate-800 hover:bg-teal-600 rounded-2xl font-black transition-all border border-slate-700 hover:border-teal-400 text-xs text-center uppercase tracking-[0.2em] shadow-xl">Abrir Guia</a>
                 </div>
 
             </div>
@@ -504,7 +514,7 @@
                     © <span id="current-year"></span> Igor (Auriosh) • Todos os direitos reservados à Vila da Névoa
                 </p>
                 <p class="text-slate-700 text-[8px] uppercase font-bold italic tracking-widest">
-                    Build Version 2.1.0 • Forged in the Mist
+                    Build Version 2.2.1 • Forged in the Mist
                 </p>
             </div>
         </div>
@@ -519,9 +529,12 @@
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
